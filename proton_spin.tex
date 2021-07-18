@@ -1,0 +1,72 @@
+\documentclass[tikz, border=3pt]{standalone}
+\usepackage{tikz,tikz-3dplot}
+\tdplotsetmaincoords{80}{45}
+\tdplotsetrotatedcoords{-90}{180}{-90}
+
+\usepackage{amsmath}
+\DeclareMathOperator{\sgn}{sgn}
+
+% https://tex.stackexchange.com/questions/401024/drawing-overlapping-3d-cones
+
+%% style for surfaces
+\tikzset{surface/.style={draw=gray!70!black, fill=gray!40!white, fill opacity=.6},
+  font={\fontsize{20pt}{12}\sffamily}}
+
+%% macros to draw back and front of cones
+%% optional first argument is styling; others are z, radius, side offset (in degrees)
+\newcommand{\coneback}[4][]{
+  %% start at the correct point on the circle, draw the arc, then draw to the origin of the diagram, then close the path
+  \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:225+#4:#3) -- (O) --cycle;
+  }
+\newcommand{\conefront}[4][]{
+  \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:-135+#4:#3) -- (O) --cycle;
+  }
+
+  \newcommand{\spin}[1]{
+    \coordinate (O) at (0,0,0);
+    \coneback[surface]{-3}{2}{-10}
+    \draw (0,0,-4) -- (O);
+    \conefront[surface]{-3}{2}{-10}
+    \coneback[surface]{3}{2}{10}
+    \draw[->] (O) -- (0,0,4) node[above] {$z$};
+    \conefront[surface]{3}{2}{10}
+    \draw[->, ultra thick] (O) -- (#1+1,#1-1,3*#1) node[above] {};
+    \newcommand{\mylabel}{$m_s = +\frac{1}{2}$}
+    \ifthenelse{#1 < 0}{\renewcommand{\mylabel}{$m_s = -\frac{1}{2}$}}{}
+    \node at (0, 0, -4.7) {\mylabel};
+  }
+  
+\begin{document}
+\begin{tikzpicture}[tdplot_main_coords, scale = 1]
+
+  \begin{scope}[xshift=-3cm, yshift=0cm]
+    \spin{1}
+  \end{scope}
+
+  \begin{scope}[xshift=3cm, yshift=0cm]
+    \spin{-1}
+  \end{scope}
+
+  \begin{scope}[xshift=9cm, yshift=0cm]
+    	%axis
+	\draw[->] (0,0,-3) -- coordinate (x axis mid) (6, 6,-3);
+    	\draw[->] (0,0,-3) -- coordinate (y axis mid) (0,0,4);
+
+	\node[below=0.8cm] at (x axis mid) {External magnetic field ($B_0$)};
+	\node[rotate=90, above=0.8cm] at (y axis mid) {Energy ($E$)};
+
+	%plots
+        \draw (0,0,0.5) -- (5,5,2.5);
+        \draw (0,0,0.5) -- (5,5,-1.5);
+        \node[right]  at (5, 5, 2.5) {$m_s = -\frac{1}{2}$};
+        \node[right]  at (5, 5, -1.5) {$m_s = +\frac{1}{2}$};
+
+        \draw[<->, ultra thick] (3.8,3.8,-1.0) -- (3.8,3.8,2.0);
+        \node[fill=white, outer sep=10pt]  at (3.8, 3.8, 0.5) {$\Delta E \propto B_0$};
+      \end{scope}
+
+      \node[right] at (-4, -4, 5) {\textbf{A.}};
+      \node[right] at (5, 5, 5) {\textbf{B.}};
+        
+\end{tikzpicture}
+\end{document}
