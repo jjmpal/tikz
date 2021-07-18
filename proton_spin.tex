@@ -4,38 +4,48 @@
 \tdplotsetrotatedcoords{-90}{180}{-90}
 
 \usepackage{amsmath}
+\usepackage{pgf}
 
-\tikzset{surface/.style = {draw=gray!70!black, fill=gray!40!white, fill opacity=.6},
-  font = {\fontsize{20pt}{12}\sffamily}
+\tikzset{surface/.style = {
+    draw=gray!70!black,
+    fill=gray!40!white,
+    fill opacity=.6},
+  font = {
+    \fontsize{20pt}{12}\sffamily}
 }
 
-\newcommand{\coneback}[4][]{
-  \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:225+#4:#3) -- (O) --cycle;
+\newcommand{\coneback}[5][]{
+  \draw[canvas is xy plane at z=#2, #1,
+  fill=gray!20!white,
+  opacity = #5,
+  fill opacity = #5] (45-#4:#3) arc (45-#4:225+#4:#3) -- (O) --cycle;
   }
-\newcommand{\conefront}[4][]{
-  \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:-135+#4:#3) -- (O) --cycle;
+\newcommand{\conefront}[5][]{
+  \draw[canvas is xy plane at z=#2, #1,
+  opacity = #5,
+  fill opacity = #5] (45-#4:#3) arc (45-#4:-135+#4:#3) -- (O) --cycle;
 }
 
 \newcommand{\spin}[1]{
   \ifthenelse{#1 < 0} {
-    \newcommand{\mylabel}{$m_s = -\frac{1}{2}$}
-    \newcommand{\topopacity}{1}
-    \newcommand{\bottomopacity}{0.5}
+    \def \topopacity {0.1}
+    \def \bottomopacity {1.0}
+    \def \mylabel {$m_s = +\frac{1}{2}$}
   } {
-    \newcommand{\mylabel}{$m_s = +\frac{1}{2}$}
-    \newcommand{\topopacity}{1}
-    \newcommand{\bottomopacity}{0.5}
+    \def \topopacity {1.0}
+    \def \bottomopacity {0.1}
+    \def \mylabel {$m_s = +\frac{1}{2}$}
   }
-    \coordinate (O) at (0,0,0);
-    \coneback[surface]{-3}{2}{-10}
-    \draw (0,0,-4) -- (O);
-    \conefront[surface]{-3}{2}{-10}
-    \coneback[surface, opacity = \topopacity{}]{3}{2}{10}
-    \draw[->] (O) -- (0,0,4) node[above] {$z$};
-    \conefront[surface, opacity = \topopacity{}]{3}{2}{10}
-    \draw[->, ultra thick] (O) -- (#1+1,#1-1,3*#1) node[above] {};
-    \node at (0, 0, -4.7) {\mylabel};
-  }
+  \coordinate (O) at (0,0,0);
+  \coneback[surface]{-3}{2}{-10}{\bottomopacity}
+  \draw (0,0,-4) -- (O);
+  \conefront[surface]{-3}{2}{-10}{\bottomopacity}
+  \coneback[surface]{3}{2}{10}{\topopacity}
+  \draw[->] (O) -- (0,0,4) node[above] {$z$};
+  \conefront[surface]{3}{2}{10}{\topopacity}
+  \draw[->, ultra thick] (O) -- (#1+1,#1-1,3*#1) node[above] {};
+  \node at (0, 0, -4.7) {\mylabel};
+}
   
 \begin{document}
 \begin{tikzpicture}[tdplot_main_coords, scale = 1]
