@@ -1,5 +1,9 @@
 # Tikz figures for LC-MS and NMR
 
+Code is published under [CC BY-SA
+4.0](https://creativecommons.org/licenses/by-sa/4.0/) and has been
+archived to Zenodo under [doi:10.5281/zenodo.5111996](https://doi.org/10.5281/zenodo.5111996).
+
 - Liquid chromatography
   - file: ``liquid_chromatography.tex``
   - Erlenmeyer flask uses tikz code published in StackExchange by
