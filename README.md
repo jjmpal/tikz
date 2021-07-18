@@ -2,7 +2,7 @@
 
 Code is published under [CC BY-SA
 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and has been
-archived to Zenodo under [doi:10.5281/zenodo.5111996](https://doi.org/10.5281/zenodo.5111996).
+archived in Zenodo under [doi:10.5281/zenodo.5111996](https://doi.org/10.5281/zenodo.5111996)
 
 - Liquid chromatography
   - file: ``liquid_chromatography.tex``
@@ -25,7 +25,7 @@ archived to Zenodo under [doi:10.5281/zenodo.5111996](https://doi.org/10.5281/ze
 - Nuclear Magnetic Resonance (NMR) spectoscopy schematic
   - file: ``nuclear_magnetic_resonance_spectroscopy.tex``
   - Coils are based on tikz code published in StackExchange by
-  [https://tex.stackexchange.com/users/8650/hpekristiansen](hpekristiansen) 6.2.2012
+  [hpekristiansen](https://tex.stackexchange.com/users/8650/hpekristiansen) 6.2.2012
   [(source)](https://tex.stackexchange.com/a/43605)
   - Source: Tognarelli JM, Dawood M, Shariff MIF, Grover VPB, Crossey
     MME, Cox IJ, Taylor-Robinson SD, McPhail MJW. Magnetic Resonance
