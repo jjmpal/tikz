@@ -5,4 +5,4 @@ all: $(PDFs)
 	@pdflatex $<
 
 clean:
-	@rm -f *.pdf *.log *.aux
+	@rm -f *.log *.aux

@@ -1,7 +1,5 @@
 \documentclass[tikz, border=3pt]{standalone}
 
-% https://davidmathlogic.com/colorblind/#%23D81B60-%231E88E5-%23FFC107-%23004D40
-
 \definecolor{rf}{RGB}{230,159,0}
 \definecolor{magnet}{RGB}{216, 27, 96}
 \definecolor{detector}{RGB}{0,158,115}
@@ -12,8 +10,6 @@
 
 \usepackage{amsmath}
 \DeclareMathOperator{\sgn}{sgn}
-
-% https://tex.stackexchange.com/questions/32297/modify-tikz-coil-decoration
 
 %% style for surfaces
 \tikzset{surface/.style={draw=gray!70!black, fill=gray!40!white, fill opacity=.6},
@@ -26,8 +22,6 @@
 \pgfmathsetmacro{\coilseparation}{0.02}
 
 \begin{document}
-
-
 
 \begin{tikzpicture}[scale = 4, every node/.style={scale=4}]
   \tikzset{
