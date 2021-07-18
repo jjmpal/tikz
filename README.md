@@ -8,7 +8,7 @@
   - Source: Alsaleh M, Barbera TA, Andrews RH, Sithithaworn P,
     Khuntikeo N, Loilome W, Yongvanit P, Cox IJ, Syms RRA, Holmes E,
     et al. Mass Spectrometry: A Guide for the Clinician. J Clin Exp
-    Hepatol. 2019;9:597–606. [doi](https://doi.org/10.1016/j.jceh.2019.04.053)
+    Hepatol. 2019;9:597–606. [doi:10.1016/j.jceh.2019.04.053](https://doi.org/10.1016/j.jceh.2019.04.053)
 - Mass spectrometry quarupole
   - file: ``mass_spectrometry_quadrupole.tex``
   - Spirals are based on tikz code published in StackExchange by
@@ -17,7 +17,7 @@
   - Source: Alsaleh M, Barbera TA, Andrews RH, Sithithaworn P,
     Khuntikeo N, Loilome W, Yongvanit P, Cox IJ, Syms RRA, Holmes E,
     et al. Mass Spectrometry: A Guide for the Clinician. J Clin Exp
-    Hepatol. 2019;9:597–606. [doi](https://doi.org/10.1016/j.jceh.2019.04.053)
+    Hepatol. 2019;9:597–606. [doi:10.1016/j.jceh.2019.04.053](https://doi.org/10.1016/j.jceh.2019.04.053)
 - Nuclear Magnetic Resonance (NMR) spectoscopy schematic
   - file: ``nuclear_magnetic_resonance_spectroscopy.tex``
   - Coils are based on tikz code published in StackExchange by
@@ -26,7 +26,7 @@
   - Source: Tognarelli JM, Dawood M, Shariff MIF, Grover VPB, Crossey
     MME, Cox IJ, Taylor-Robinson SD, McPhail MJW. Magnetic Resonance
     Spectroscopy: Principles and Techniques: Lessons for Clinicians. J
-    Clin Exp    Hepatol. 2015;5:320–328. [doi](https://doi.org/10.1016/j.jceh.2015.10.006)
+    Clin Exp    Hepatol. 2015;5:320–328. [doi:10.1016/j.jceh.2015.10.006](https://doi.org/10.1016/j.jceh.2015.10.006)
   - Source: Hyperphysics Nuclear Magnetic Resonance 
 - Proton spin
   - file: ``proton_spin.tex``
@@ -36,7 +36,7 @@
   - Source: Tognarelli JM, Dawood M, Shariff MIF, Grover VPB, Crossey
     MME, Cox IJ, Taylor-Robinson SD, McPhail MJW. Magnetic Resonance
     Spectroscopy: Principles and Techniques: Lessons for Clinicians. J
-    Clin Exp    Hepatol. 2015;5:320–328. [doi](https://doi.org/10.1016/j.jceh.2015.10.006)
+    Clin Exp    Hepatol. 2015;5:320–328. [doi:10.1016/j.jceh.2015.10.006](https://doi.org/10.1016/j.jceh.2015.10.006)
   - Source: Hyperphysics Larmor Frequency
     [(source)](http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/larmor.html)
 
