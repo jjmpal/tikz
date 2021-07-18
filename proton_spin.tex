@@ -4,33 +4,36 @@
 \tdplotsetrotatedcoords{-90}{180}{-90}
 
 \usepackage{amsmath}
-\DeclareMathOperator{\sgn}{sgn}
 
-%% style for surfaces
-\tikzset{surface/.style={draw=gray!70!black, fill=gray!40!white, fill opacity=.6},
-  font={\fontsize{20pt}{12}\sffamily}}
+\tikzset{surface/.style = {draw=gray!70!black, fill=gray!40!white, fill opacity=.6},
+  font = {\fontsize{20pt}{12}\sffamily}
+}
 
-%% macros to draw back and front of cones
-%% optional first argument is styling; others are z, radius, side offset (in degrees)
 \newcommand{\coneback}[4][]{
-  %% start at the correct point on the circle, draw the arc, then draw to the origin of the diagram, then close the path
   \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:225+#4:#3) -- (O) --cycle;
   }
 \newcommand{\conefront}[4][]{
   \draw[canvas is xy plane at z=#2, #1] (45-#4:#3) arc (45-#4:-135+#4:#3) -- (O) --cycle;
-  }
+}
 
-  \newcommand{\spin}[1]{
+\newcommand{\spin}[1]{
+  \ifthenelse{#1 < 0} {
+    \newcommand{\mylabel}{$m_s = -\frac{1}{2}$}
+    \newcommand{\topopacity}{1}
+    \newcommand{\bottomopacity}{0.5}
+  } {
+    \newcommand{\mylabel}{$m_s = +\frac{1}{2}$}
+    \newcommand{\topopacity}{1}
+    \newcommand{\bottomopacity}{0.5}
+  }
     \coordinate (O) at (0,0,0);
     \coneback[surface]{-3}{2}{-10}
     \draw (0,0,-4) -- (O);
     \conefront[surface]{-3}{2}{-10}
-    \coneback[surface]{3}{2}{10}
+    \coneback[surface, opacity = \topopacity{}]{3}{2}{10}
     \draw[->] (O) -- (0,0,4) node[above] {$z$};
-    \conefront[surface]{3}{2}{10}
+    \conefront[surface, opacity = \topopacity{}]{3}{2}{10}
     \draw[->, ultra thick] (O) -- (#1+1,#1-1,3*#1) node[above] {};
-    \newcommand{\mylabel}{$m_s = +\frac{1}{2}$}
-    \ifthenelse{#1 < 0}{\renewcommand{\mylabel}{$m_s = -\frac{1}{2}$}}{}
     \node at (0, 0, -4.7) {\mylabel};
   }
   
