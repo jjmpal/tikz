@@ -27,7 +27,7 @@
     MME, Cox IJ, Taylor-Robinson SD, McPhail MJW. Magnetic Resonance
     Spectroscopy: Principles and Techniques: Lessons for Clinicians. J
     Clin Exp    Hepatol. 2015;5:320–328. [doi:10.1016/j.jceh.2015.10.006](https://doi.org/10.1016/j.jceh.2015.10.006)
-  - Source: Hyperphysics Nuclear Magnetic Resonance 
+  - Source: Hyperphysics Nuclear Magnetic Resonance [(source)](http://hyperphysics.phy-astr.gsu.edu/hbase/Nuclear/nmr.html)
 - Proton spin
   - file: ``proton_spin.tex``
   - Cones are based on tikz code published in StackExchange by
